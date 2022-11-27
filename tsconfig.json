@@ -15,7 +15,8 @@
       "@src/*": ["./src/*"],
       "@domain/*": ["./src/domain/*"],
       "@entities/*": ["./src/domain/entities/*"],
-      "@repositories/*": ["./src/domain/repositories/*"],
+      "@application/*": ["./src/application/*"],
+      "@infra/*": ["./src/infra/*"]
     },
   },
   "exclude": ["node_modules"]
