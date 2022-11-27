@@ -13,10 +13,11 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
+      "@application/*": ["./src/application/*"],
       "@domain/*": ["./src/domain/*"],
       "@entities/*": ["./src/domain/entities/*"],
-      "@application/*": ["./src/application/*"],
       "@infra/*": ["./src/infra/*"],
+      "@main/*": ["./src/main/*"],
       "@tests/*": ["./tests/*"]
     }
   },

@@ -1,5 +1,7 @@
-async function main() {
-  console.log("Hi from the main function! o/");
-}
+import setupApp from "@main/config/app";
 
-main();
+const app = setupApp();
+
+app.listen(3000, () => {
+  console.log(`Server is listening on port 3000`);
+});
