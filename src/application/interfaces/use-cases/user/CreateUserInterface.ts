@@ -1,5 +1,5 @@
 import { UseCaseInterface } from "@src/application/interfaces/use-cases/UseCaseInterface";
-import { UserProps } from "@src/domain/entities/UserEntity";
+import { UserEntity, UserProps } from "@src/domain/entities/UserEntity";
 
 export interface CreateUserInterface
   extends UseCaseInterface<
