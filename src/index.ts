@@ -1,17 +1,13 @@
+import { CreateUser } from "./application/use-cases/user/CreateUser";
 import { UserEntity } from "./domain/entities/UserEntity";
-import { InMemoryUserRepository } from "./domain/repositories/InMemoryUserRepository";
-
-const user = new UserEntity("123", "johnzballad@gmail.com");
-
-const inMemoryDB = new InMemoryUserRepository();
+import { InMemoryUserRepository } from "./infra/db/inMemory/repositories/InMemoryUserRepository";
 
 async function main() {
-  await inMemoryDB.save(user);
+  const inMemoryUserRepository = new InMemoryUserRepository()
+  const createUserUseCase = new CreateUser(inMemoryUserRepository)
 
-  // find just saved user
-  const foundUser = await inMemoryDB.getUser(user.getId())
-  console.log('Found user: ', foundUser)
-
+  const newUser = await createUserUseCase.execute({ email: 'johnzballad@gmail.com' })
+  console.log(newUser)
 }
 
 main()
