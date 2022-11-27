@@ -30,4 +30,14 @@ describe("CreateUser", () => {
       email
     });
   });
+
+  it("should return an User on succes", async () => {
+    const { sut } = makeSut();
+    const { email, id } = makeFakeUser();
+
+    const response = await sut.execute({ email });
+
+    expect(response).toHaveProperty("id", id);
+    expect(response).toHaveProperty("email", email);
+  });
 });
