@@ -1,17 +1,14 @@
+export type UserProps = {
+  id: string
+  email: string
+}
+
 export class UserEntity {
-  private id: string;
-  private email: string;
+  public readonly id: string;
+  public readonly email: string;
 
-  constructor(id: string, email: string) {
-    this.id = id;
-    this.email = email;
-  }
-
-  public getId() {
-    return this.id;
-  }
-
-  public getEmail() {
-    return this.email;
+  constructor(props: UserProps) {
+    this.id = props.id;
+    this.email = props.email;
   }
 }
