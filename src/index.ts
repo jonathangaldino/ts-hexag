@@ -1,5 +1,4 @@
 import { CreateUser } from "./application/use-cases/user/CreateUser";
-import { UserEntity } from "./domain/entities/UserEntity";
 import { InMemoryUserRepository } from "./infra/db/inMemory/repositories/InMemoryUserRepository";
 
 async function main() {
