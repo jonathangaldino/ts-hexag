@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "ts-node -r tsconfig-paths/register src/index.ts",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
@@ -9,6 +11,8 @@
     "@typescript-eslint/parser": "^5.44.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
     "prettier": "2.8.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
