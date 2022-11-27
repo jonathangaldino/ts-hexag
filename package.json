@@ -1,4 +1,9 @@
 {
+  "name": "ts-hexag",
+  "engines": {
+    "node": "18.2.0",
+    "npm": "9.1.2"
+  },
   "scripts": {
     "dev": "ts-node -r tsconfig-paths/register src/index.ts",
     "build": "tsc --build",
