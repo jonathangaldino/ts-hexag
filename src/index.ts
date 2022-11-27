@@ -5,12 +5,13 @@ const user = new UserEntity("123", "johnzballad@gmail.com");
 
 const inMemoryDB = new InMemoryUserRepository();
 
-(async () => {
-
+async function main() {
   await inMemoryDB.save(user);
 
   // find just saved user
   const foundUser = await inMemoryDB.getUser(user.getId())
   console.log('Found user: ', foundUser)
 
-})()
+}
+
+main()
