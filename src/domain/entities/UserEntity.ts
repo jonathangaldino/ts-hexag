@@ -1,7 +1,7 @@
 export type UserProps = {
-  id: string
-  email: string
-}
+  id: string;
+  email: string;
+};
 
 export class UserEntity {
   public readonly id: string;

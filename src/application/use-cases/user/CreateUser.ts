@@ -8,6 +8,6 @@ export class CreateUser implements CreateUserInterface {
   execute(userData: CreateUserInterface.Request): Promise<UserEntity> {
     return this.createUserRepository.createUser({
       ...userData,
-    })
+    });
   }
 }
