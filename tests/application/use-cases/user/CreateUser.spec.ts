@@ -1,26 +1,26 @@
 import { CreateUser } from "@src/application/use-cases/user/CreateUser";
 import { makeFakeUser } from "@tests/domain/mocks/entities";
-import { CreateUserRepositoryStub } from "@tests/infra/mocks/user/repositories";
+import { UserRepositoryStub } from "@tests/infra/mocks/user/repositories";
 
 type SutTypes = {
   sut: CreateUser;
-  createUserRepositoryStub: CreateUserRepositoryStub;
+  userRepositoryStub: UserRepositoryStub;
 };
 
 const makeSut = (): SutTypes => {
-  const createUserRepositoryStub = new CreateUserRepositoryStub();
-  const sut = new CreateUser(createUserRepositoryStub);
+  const userRepositoryStub = new UserRepositoryStub();
+  const sut = new CreateUser(userRepositoryStub);
 
   return {
     sut,
-    createUserRepositoryStub
+    userRepositoryStub
   };
 };
 
 describe("CreateUser", () => {
   it("should call CreateUserRepository with correct data", async () => {
-    const { sut, createUserRepositoryStub } = makeSut();
-    const createUserSpy = jest.spyOn(createUserRepositoryStub, "createUser");
+    const { sut, userRepositoryStub } = makeSut();
+    const createUserSpy = jest.spyOn(userRepositoryStub, "createUser");
 
     const { email } = makeFakeUser();
 
