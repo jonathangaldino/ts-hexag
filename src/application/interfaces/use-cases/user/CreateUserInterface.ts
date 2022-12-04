@@ -1,5 +1,6 @@
 import { UseCaseInterface } from "@src/application/interfaces/use-cases/UseCaseInterface";
 import { User, UserProps } from "@src/application/domain/User";
+import { BaseUseCaseError } from "../../BaseUseCaseError";
 
 export interface CreateUserInterface
   extends UseCaseInterface<
@@ -13,5 +14,5 @@ export interface CreateUserInterface
 
 export namespace CreateUserInterface {
   export type Request = Omit<UserProps, "id">;
-  export type Response = User;
+  export type Response = User | BaseUseCaseError;
 }
