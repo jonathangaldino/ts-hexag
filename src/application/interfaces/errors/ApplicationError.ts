@@ -1,4 +1,4 @@
-export class BaseUseCaseError extends Error {
+export class ApplicationError extends Error {
   constructor(stack?: string) {
     super("UseCase Error");
     this.name = "UseCaseError";

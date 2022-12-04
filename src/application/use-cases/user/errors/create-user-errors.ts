@@ -1,6 +1,6 @@
-import { BaseUseCaseError } from "@src/application/interfaces/BaseUseCaseError";
+import { ApplicationError } from "@src/application/interfaces/errors/ApplicationError";
 
-export class UserAlreadyExistsError extends BaseUseCaseError {
+export class UserAlreadyExistsError extends ApplicationError {
   constructor() {
     super();
     this.message = "User already exists";
