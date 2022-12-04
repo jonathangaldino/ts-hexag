@@ -14,8 +14,6 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@application/*": ["./src/application/*"],
-      "@domain/*": ["./src/domain/*"],
-      "@entities/*": ["./src/domain/entities/*"],
       "@infra/*": ["./src/infra/*"],
       "@main/*": ["./src/main/*"],
       "@tests/*": ["./tests/*"]

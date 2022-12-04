@@ -1,5 +1,5 @@
 import { UseCaseInterface } from "@src/application/interfaces/use-cases/UseCaseInterface";
-import { UserEntity, UserProps } from "@src/domain/entities/UserEntity";
+import { User, UserProps } from "@src/application/domain/User";
 
 export interface CreateUserInterface
   extends UseCaseInterface<
@@ -13,5 +13,5 @@ export interface CreateUserInterface
 
 export namespace CreateUserInterface {
   export type Request = Omit<UserProps, "id">;
-  export type Response = UserEntity;
+  export type Response = User;
 }

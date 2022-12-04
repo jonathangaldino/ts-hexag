@@ -1,24 +1,24 @@
 import { UniqueIdGenerator } from "@src/application/interfaces/helpers/UniqueIdGenerator";
 import { UserRepository } from "@src/application/interfaces/repositories/UserRepository";
-import { UserEntity, UserProps } from "@src/domain/entities/UserEntity";
+import { User, UserProps } from "@src/application/domain/User";
 
 const inMemoryDatabase = new Map<string, UserProps>();
 
 export class inMemoryUserRepository implements UserRepository {
   constructor(private readonly genUuid: UniqueIdGenerator) {}
 
-  createUser(userData: UserRepository.CreateUserRequest): Promise<UserEntity> {
+  createUser(userData: UserRepository.CreateUserRequest): Promise<User> {
     const id = this.genUuid.generate();
 
     inMemoryDatabase.set(id, { id, ...userData });
 
-    const user = new UserEntity({ id, email: userData.email });
+    const user = new User({ id, email: userData.email });
 
     return Promise.resolve(user);
   }
 
-  findUserByEmail(email: string): Promise<UserEntity | undefined> {
-    let maybeUser: UserEntity | undefined;
+  findUserByEmail(email: string): Promise<User | undefined> {
+    let maybeUser: User | undefined;
 
     inMemoryDatabase.forEach((user) => {
       if (user.email === email) {

@@ -1,4 +1,4 @@
-import { UserEntity, UserProps } from "@src/domain/entities/UserEntity";
+import { User, UserProps } from "@src/application/domain/User";
 
 export interface UserRepository {
   createUser(
@@ -12,8 +12,8 @@ export interface UserRepository {
 
 export namespace UserRepository {
   export type CreateUserRequest = Omit<UserProps, "id">;
-  export type CreateUserResponse = UserEntity;
+  export type CreateUserResponse = User;
 
   export type FindUserByEmailRequest = string;
-  export type FindUserByEmailResponse = UserEntity | undefined;
+  export type FindUserByEmailResponse = User | undefined;
 }
